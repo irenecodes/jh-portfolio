@@ -52,10 +52,22 @@ img {
     margin-top: 10px;
     display:flex;
     justify-content: space-between;
+    @media @desktop {
+        justify-content: center;
+    }
 }
 
 .menu {
     display:none;
+    @media @desktop {
+        display: block;
+    }
+    ul {
+        @media @desktop {
+            display:flex;
+            justify-content: space-around;
+        }
+    }
 }
 
 .show {
@@ -64,12 +76,35 @@ img {
 
 .hamburger {
     font-size: 1.5rem;
+    @media @desktop {
+        display:none;
+    }
 }
 
+.exit-responsive {
+    @media @desktop {
+        display: none;
+    }
+}
+
+header {
+    @media @desktop {
+        min-height: 70vh;
+        background: url(../../assets/background.png);
+        background-size: cover;background-attachment:fixed;
+        position:relative;
+    }
+}
+
+// intro styles
 .intro {
     margin-top:10vh;
     h1 {
         font-size: 1.3rem;
+        @media @desktop {
+            margin: 20%;
+            font-size: 2.2rem;
+        }
     }
 }
 
@@ -88,19 +123,36 @@ img {
     justify-content: center;
 }
 
-.arrow-container {
+.header-img-container {
     .container();
-    margin:50px;
+    margin:15%;
+    @media @desktop {
+        margin-bottom:10%;
+    }
     img {
-        width: 20px;
+        width: 10%;
+        @media @desktop {
+            width: 5%;
+        }
+        &:nth-child(2) {
+            display:none;
+            @media @desktop {
+                display: block;
+                position:absolute;
+                //position is relative to header
+                bottom: 0;
+                right:10%;
+                width:20%;
+            }
+        }
     }
 }
 
-.portrait-container {
+.pic-container {
     .container();
     img {
         width:90%;
-        margin-bottom: 50px;
+        margin-bottom: 15%;
     }
 }
 
@@ -109,7 +161,7 @@ img {
     display:flex;
     flex-direction: row;
     img {
-        width:50px;
+        width:15%;
         margin-right:15px;
     }
 }
@@ -139,14 +191,61 @@ h3,
 }
 
 #work {
-    margin-top: 100px;
+    margin-top: 20%;
     a {
-        margin: 50px 0;
+        margin: 20% 0;
         padding: 20px;
         border-radius: 50px;
         display:block;
         text-align: center;
         background: @secondary;
         color:white;
+    }
+}
+
+
+// contact styles
+
+
+fieldset {
+    border:none;
+    padding:0;
+    margin:0;
+}
+
+form {
+    label,
+    input,
+    button {
+        display:block;
+    }
+    input,
+    textarea,
+    .form-button {
+        width:100%;
+        border: 2px @secondary solid;
+        padding:5px;
+        &:focus {
+            border:2px lighten(@secondary, 20%) solid;
+        } 
+    }
+    textarea {
+        resize:none;
+    }
+    label {
+        color: @tertiary;
+    }
+    .form-button {
+        // width:100%;
+        margin:20px 0;
+        background: @secondary;
+        // border: 2px $pink solid;
+        color: white;
+        transition: all 0.3s ease;
+        &:focus,
+        &:hover {
+            background:white;
+            color:@secondary;
+        }
     }
 }
