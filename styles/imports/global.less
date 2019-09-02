@@ -1,0 +1,152 @@
+// stripping styles
+* {
+    margin:0;
+    padding:0;
+    line-height: 1.6;
+}
+
+html {
+    font-size: 125%;
+}
+
+body {
+    font-family: @main-ff;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display:block;
+    width:100%;
+    max-width: 100%;
+}
+
+.skip-link {
+    position: absolute;
+    left: -1000px;
+    top: 5px;
+    z-index: 999;
+    background: black;
+    color: white;
+}
+
+.skip-link:focus {
+    left:0;
+}
+
+.wrapper {
+    max-width:1280px;
+    width:90%;
+    margin: 0 auto;
+}
+
+// header styles
+.mobile-nav {
+    margin-top: 10px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.menu {
+    display:none;
+}
+
+.show {
+    display:block;
+}
+
+.hamburger {
+    font-size: 1.5rem;
+}
+
+.intro {
+    margin-top:10vh;
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+
+.intro span{
+    font-family: @header-span-ff;
+    &:nth-child(1) {
+        color: @secondary;
+    }
+    &:nth-child(2) {
+        color: @tertiary;
+    }
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+}
+
+.arrow-container {
+    .container();
+    margin:50px;
+    img {
+        width: 20px;
+    }
+}
+
+.portrait-container {
+    .container();
+    img {
+        width:90%;
+        margin-bottom: 50px;
+    }
+}
+
+// about
+.greeting {
+    display:flex;
+    flex-direction: row;
+    img {
+        width:50px;
+        margin-right:15px;
+    }
+}
+
+.greeting,
+h3 {
+    color:@secondary;
+}
+
+.paragraph-spacing {
+    margin: 25px 0;
+}
+
+#about p {
+    .paragraph-spacing();
+}
+
+.one-liner,
+h3,
+#work p {
+    font-size: 1.1rem;
+}
+
+.one-liner,
+#work p {
+    color: @tertiary;
+}
+
+#work {
+    margin-top: 100px;
+    p {
+        margin-bottom: 50px;
+    }
+    a {
+        padding: 20px;
+        border-radius: 50px;
+        background: @secondary;
+        color:white;
+    }
+}
