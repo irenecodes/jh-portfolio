@@ -248,13 +248,20 @@ h2 {
 
 .projects {
     display: flex;
+    flex-wrap:wrap;
     justify-content: space-between;
 }
 
 .project-container {
     position:relative;
-    border: 2px solid red;
-    flex: 0 0 49%;
+    border-radius: 5px;
+    box-shadow:10px 10px 22px -20px rgba(0,0,0,0.75);
+    margin: 2.5%;
+    flex: 0 0 45%;
+    &:hover .overlay,
+    &:focus .overlay {
+        opacity: 1;
+    }
     .work-completed {
         position: absolute;
         top:15px;
@@ -262,10 +269,30 @@ h2 {
         background: rgba(255,255,255,0.85);
         border-radius: 0 50px 50px 0;
     }
+    .work-description {
+        padding:20px;
+        min-height:35%;
+        position:absolute;
+        bottom:0;
+        // if want to overlap img
+        background: white;
+    }
+
     h3 {
         font-size: 1.3rem;
     }
 }
+
+.overlay {
+    background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+}
+
 
 
 // contact styles
