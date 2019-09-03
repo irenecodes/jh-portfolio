@@ -59,6 +59,20 @@ img {
 
 .menu {
     display:none;
+    text-align: right;
+    position:absolute;
+    top:0;
+    bottom:50%;
+    right:0;
+    left:50%;
+    background:@secondary;
+    li {
+        font-size:2rem;
+        padding:10px;
+    }
+    a{
+        color: white;
+    }
     @media @desktop {
         display: block;
     }
@@ -161,7 +175,8 @@ header {
 }
 
 .greeting,
-.about-description h3 {
+.about-description h3,
+#contact h2 {
     color:@secondary;
 }
 
@@ -264,6 +279,7 @@ h2 {
     }
     .work-completed {
         position: absolute;
+        max-width:75%;
         top:15px;
         padding:15px;
         background: rgba(255,255,255,0.85);
@@ -290,19 +306,29 @@ h2 {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	opacity: 0;
+    opacity: 0;
+    a:hover,
+    &:focus {
+        border:5px blue solid;
+    }
 }
 
 
 
 // contact styles
-
-
-fieldset {
+#contact {
+    fieldset {
     border:none;
-    padding:0;
-    margin:0;
+    }
+    ul {
+        display:flex;
+        justify-content: space-around;
+    }
+    a {
+        color: @secondary;
+    }
 }
+
 
 form {
     label,
@@ -339,4 +365,9 @@ form {
             color:@secondary;
         }
     }
+}
+
+// footer styles
+footer {
+    text-align: center;
 }
