@@ -326,6 +326,15 @@ h2 {
     }
     a {
         color: @secondary;
+        text-shadow: 0px 0px 5px white;
+        padding:5px;
+        border: 2px solid @secondary;
+        &:hover,
+        &:focus {
+            color: white;
+            text-shadow: 0px 0px 5px @secondary;
+            // text-shadow: 3px 3px 3px @tertiary;
+        }
     }
 }
 
@@ -367,7 +376,9 @@ form {
     }
 }
 
+
 // footer styles
 footer {
+    margin-top: 20px;
     text-align: center;
 }
