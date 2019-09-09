@@ -52,7 +52,7 @@ img {
     margin-top: 10px;
     display:flex;
     justify-content: space-between;
-    @media @desktop {
+    @media @tablet {
         justify-content: center;
     }
 }
@@ -66,28 +66,26 @@ img {
     right:0;
     left:50%;
     background:@secondary;
-    @media @desktop {
+    @media @tablet {
         background:none;
         position:static;
+        display:block;
     }
     li {
         font-size:2rem;
         padding:10px;
-        @media @desktop {
+        @media @tablet {
             font-size: 1.2rem;
         }
     }
     a{
         color: white;
-        @media @desktop {
+        @media @tablet {
             color: @primary;
         }
     }
-    @media @desktop {
-        display: block;
-    }
     ul {
-        @media @desktop {
+        @media @tablet {
             display:flex;
             justify-content: center;
         }
@@ -100,20 +98,20 @@ img {
 
 .hamburger {
     font-size: 1.5rem;
-    @media @desktop {
+    @media @tablet {
         display:none;
     }
 }
 
 .exit-responsive {
-    @media @desktop {
+    @media @tablet {
         display: none;
     }
 }
 
 header {
-    @media @desktop {
-        min-height: 70vh;
+    @media @tablet {
+        min-height: 50vh;
         // background: url(../../assets/background.png);
         // background-size: cover;background-attachment:fixed;
         position:relative;
@@ -125,6 +123,10 @@ header {
     margin-top:10vh;
     h1 {
         font-size: 1.3rem;
+        @media @tablet {
+            margin: 15%;
+            font-size: 2rem;
+        }
         @media @desktop {
             margin: 20%;
             font-size: 2.2rem;
@@ -150,12 +152,12 @@ header {
 .header-img-container {
     .container();
     margin:15%;
-    @media @desktop {
+    @media @tablet {
         margin-bottom:10%;
     }
     img {
         width: 10%;
-        @media @desktop {
+        @media @tablet {
             width: 5%;
         }
         &:nth-child(2) {
@@ -179,12 +181,13 @@ header {
     display:flex;
     flex-direction: row;
     img {
-        width:15%;
+        width:50px;
         margin-right:15px;
         @media @desktop {
-            &:last-child {
-                width:100%;
-            }
+            width: 5%;
+            // &:last-child {
+            //     width:100%;
+            // }
         }
     }
 }
@@ -217,7 +220,7 @@ header {
         img {
             width:90%;
             margin-bottom: 15%;
-            @media @desktop {
+            @media @tablet {
                 margin-bottom: 0;
                 width: 400px;
                 height: 400px;
@@ -226,11 +229,13 @@ header {
         }
     }
     .about-description {
-        @media @desktop {
+        @media @tablet {
             flex: 1 0 60%;
             margin-left:20px;
-            box-shadow:0px 4px 1px 1px rgba(235,235,235,1);
             padding:3%;
+        }
+        @media @desktop {
+            box-shadow:0px 4px 1px 1px rgba(235,235,235,1);
         }
     }
 }
@@ -256,7 +261,7 @@ h2 {
 // work styles
 #work {
     margin-top: 20%;
-    @media @desktop {
+    @media @tablet {
         margin-top:0;
         .mobile-version-work-intro {
             display:none;
@@ -273,7 +278,7 @@ h2 {
         &:nth-child(2) {
             background: @tertiary;
         }
-        @media @desktop {
+        @media @tablet {
             margin: 15px;
         }
     }
@@ -281,7 +286,7 @@ h2 {
 
 .desktop-version-work {
     display:none;
-    @media @desktop {
+    @media @tablet {
         display: block;
         h2 {
             text-align: center;
@@ -356,8 +361,11 @@ h2 {
 
 // contact styles
 #contact {
+    @media @tablet {
+        margin-top: 50px;
+    }
     @media @desktop {
-        padding: 15%;
+        margin: 15%;
     }
     fieldset {
     border:none;
@@ -386,13 +394,6 @@ h2 {
     }
 }
 
-.thought-could-container {
-    display:none;
-    @media @desktop {
-        display:block;
-        // width:50%;
-    }
-}
 
 
 form {
@@ -416,6 +417,7 @@ form {
     }
     label {
         color: @tertiary;
+        margin:5px 0;
     }
     .form-button {
         // width:100%;
