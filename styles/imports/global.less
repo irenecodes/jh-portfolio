@@ -161,7 +161,7 @@ header {
     h1 {
         font-size: 1.3rem;
         @media @tablet {
-            margin: 15%;
+            margin: 10%;
             font-size: 2rem;
         }
         @media @desktop {
@@ -315,9 +315,12 @@ header {
 }
 
 .project-container {
+    background: white;
     position:relative;
     border-radius: 5px;
-    box-shadow:0px 5px 5px 2px rgba(0, 0, 0, 0.2);
+    // box-shadow:0px 5px 5px 2px rgba(0, 0, 0, 0.2);
+
+    box-shadow:0px 4px 1px 1px rgba(235,235,235,0.2);
     margin: 2.5%;
     flex: 0 0 45%;
     &:hover .overlay,
@@ -333,11 +336,18 @@ header {
         border-radius: 0 50px 50px 0;
         font-family: @header-span-ff;
     }
+
+    img {
+        border-radius: 5px 5px 0 0;
+    }
+
     .work-description {
+        border-radius: 0 0 5px 5px;
         padding:20px;
-        min-height:35%;
-        position:absolute;
-        bottom:0;
+        // min-height:35%;
+        // position:absolute;
+        // bottom:0;
+
         // if want to overlap img
         background: white;
         font-weight: regular;
