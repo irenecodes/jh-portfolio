@@ -3,6 +3,9 @@
     margin:0;
     padding:0;
     line-height: 1.6;
+    &:focus {
+        outline: 5px auto -webkit-focus-ring-color;
+    }
 }
 
 html {
@@ -11,8 +14,23 @@ html {
 
 body {
     font-family: @main-ff;
+    // background: url(../../assets/background.png) top left;
+    // background-size: cover;
+    // background-attachment: fixed;
+    @media @tablet {
+        background: url(../../assets/background.png) top left no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
 }
 
+h1, h2, h3 {
+    font-family: @header-span-ff;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
 
 a {
     text-decoration: none;
@@ -48,12 +66,28 @@ img {
 }
 
 // header styles
+
 .nav-bar {
-    margin-top: 10px;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    // background: rgba(250,250,250,0.8);
+    background: rgba(255,94,152, 0.2);
+
+    padding: 10px;
     display:flex;
     justify-content: space-between;
+
+    .logo-container {
+        display:flex;
+        align-self: center;
+    }
+
     @media @tablet {
         justify-content: center;
+        position: initial;
+        background: initial;
     }
 }
 
@@ -62,10 +96,13 @@ img {
     text-align: right;
     position:absolute;
     top:0;
-    bottom:50%;
+    bottom:0;
     right:0;
-    left:50%;
-    background:@secondary;
+    left:0;
+    // background:@secondary;
+    background: rgba(255,94,152, 0.9);
+
+
     @media @tablet {
         background:none;
         position:static;
@@ -120,7 +157,7 @@ header {
 
 // intro styles
 .intro {
-    margin-top:10vh;
+    margin-top:20vh;
     h1 {
         font-size: 1.3rem;
         @media @tablet {
@@ -132,15 +169,14 @@ header {
             font-size: 2.2rem;
         }
     }
-}
-
-.intro span{
-
-    &:nth-child(1) {
-        color: @secondary;
-    }
-    &:nth-child(2) {
-        color: @tertiary;
+    span{
+        font-family: @header-span-ff;
+        &:nth-child(1) {
+            color: @secondary;
+        }
+        &:nth-child(2) {
+            color: @tertiary;
+        }
     }
 }
 
@@ -160,55 +196,26 @@ header {
         @media @tablet {
             width: 5%;
         }
-        &:nth-child(2) {
-            display:none;
-            @media @desktop {
-                display: block;
-                position:absolute;
-                //position is relative to header
-                bottom: 0;
-                right:10%;
-                width:20%;
-            }
-        }
     }
 }
 
 // about
-
-
-.greeting {
+.greeting-emoji {
     display:flex;
     flex-direction: row;
+    color:@secondary;
     img {
         width:50px;
         margin-right:15px;
         @media @desktop {
             width: 5%;
-            // &:last-child {
-            //     width:100%;
-            // }
         }
     }
 }
 
-.greeting,
-.about-description h3,
-#contact h2 {
-    color:@secondary;
-}
 
 .paragraph-spacing {
     margin: 25px 0;
-}
-
-#about p {
-    .paragraph-spacing();
-    @media @desktop {
-        &:last-child {
-            margin-bottom:0;
-        }
-    }
 }
 
 #about {
@@ -229,6 +236,9 @@ header {
         }
     }
     .about-description {
+        h3 {
+            color: @secondary;
+        }
         @media @tablet {
             flex: 1 0 60%;
             margin-left:20px;
@@ -238,29 +248,28 @@ header {
             box-shadow:0px 4px 1px 1px rgba(235,235,235,1);
         }
     }
+    p {
+        .paragraph-spacing();
+        @media @desktop {
+            &:last-child {
+                margin-bottom:0;
+            }
+        }
+    }
 }
 
-// common styles
-.one-liner,
-h3,
-#work p {
-    font-size: 1.1rem;
-}
-
-.one-liner,
-#work p,
-.desktop-version-work span {
+.one-liner {
+    font-size: 1.3rem;
     color: @tertiary;
-}
-
-.intro span,
-h2 {
-    font-family: @header-span-ff;
 }
 
 // work styles
 #work {
     margin-top: 20%;
+    p {
+        color: @tertiary;
+        // font-size: 1rem;
+    }
     @media @tablet {
         margin-top:0;
         .mobile-version-work-intro {
@@ -294,6 +303,7 @@ h2 {
         }
         span {
             display:block;
+            color: @tertiary;
         }
     }
 }
@@ -307,7 +317,7 @@ h2 {
 .project-container {
     position:relative;
     border-radius: 5px;
-    box-shadow:10px 10px 22px -20px rgba(0,0,0,0.75);
+    box-shadow:0px 5px 5px 2px rgba(0, 0, 0, 0.2);
     margin: 2.5%;
     flex: 0 0 45%;
     &:hover .overlay,
@@ -321,6 +331,7 @@ h2 {
         padding:15px;
         background: rgba(255,255,255,0.85);
         border-radius: 0 50px 50px 0;
+        font-family: @header-span-ff;
     }
     .work-description {
         padding:20px;
@@ -329,10 +340,12 @@ h2 {
         bottom:0;
         // if want to overlap img
         background: white;
+        font-weight: regular;
     }
 
     h3 {
         font-size: 1.3rem;
+        font-family: @header-span-ff;
     }
 }
 
@@ -352,7 +365,7 @@ h2 {
         width:50%;
         &hover,
         &:focus {
-            border:5px blue solid;
+            outline: 5px auto -webkit-focus-ring-color;
         }
     }
 }
@@ -361,6 +374,9 @@ h2 {
 
 // contact styles
 #contact {
+    h2 {
+        color: @secondary;
+    }
     @media @tablet {
         margin-top: 50px;
     }
@@ -380,16 +396,16 @@ h2 {
         }
     }
     a {
-        color: @secondary;
-        text-shadow: 0px 0px 5px white;
+        color:@secondary;
+        background: white;
+        border-radius: 5px;
         padding:5px;
         border: 2px solid @secondary;
         transition: ease 0.3s all;
         &:hover,
         &:focus {
             color: white;
-            text-shadow: 0px 0px 5px @secondary;
-            // text-shadow: 3px 3px 3px @tertiary;
+            background: @secondary;
         }
     }
 }
@@ -408,6 +424,7 @@ form {
         width:100%;
         border: 2px @secondary solid;
         padding:5px;
+        border-radius: 5px;
         &:focus {
             border:2px @secondary solid;
         } 
@@ -423,7 +440,7 @@ form {
         // width:100%;
         margin:20px 0;
         background: @secondary;
-        // border: 2px $pink solid;
+        
         color: white;
         transition: all 0.3s ease;
         &:focus,
