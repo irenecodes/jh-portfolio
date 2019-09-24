@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Joey Hua</title>
+    <title>Joey Hua | UX/UI & Service Designer</title>
 
     <!-- CSS link -->
     <link rel="stylesheet" href="styles/styles.css">
@@ -21,11 +21,11 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content.</a>
-    <header>
+    <header id="top">
         <div class="wrapper">
             <div class="nav-bar">
                 <div class="logo-container">
-                    <a href="#" aria-label="Click to scroll to top.">
+                    <a href="#top" aria-label="Click to scroll to top.">
                         <img src="./assets/logo.svg" alt="Joey Hua logo.">
                     </a>
                 </div>
@@ -37,9 +37,9 @@
             <nav class="menu">
                 <ul>
                     <li class="exit-responsive"><i class="fas fa-times"></i></li>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#work">work</a></li>
-                    <li><a href="#contact">contact</a></li>
+                    <li><a class="click-link" href="#about">about</a></li>
+                    <li><a class="click-link" href="#work">work</a></li>
+                    <li><a class="click-link" href="#contact">contact</a></li>
                 </ul>
             </nav>
 
@@ -102,7 +102,7 @@
                 <h2>Work I've done <span>(buttons link to Google slides)</span></h2>
 
                 <div class="projects">
-                    <div class="project-container" tabindex="0">
+                    <div class="project-container" tabindex=0 id="focus-container" onfocus="focusMethod()">
                         <h4 class="work-completed">UX research, UX and service design</h4>
                         <div class="work-img-container">
                             <img src="./assets/C4C.png" alt="Code for Canada meeting.">
@@ -113,9 +113,9 @@
                             <p>Designing a modern way to test applicants for managerial jobs in the federal government.
                             </p>
                         </div>
-                        <div class="overlay">
-                            <a href="https://docs.google.com/presentation/d/e/2PACX-1vTiUrDdm9kO1ZPVMKTNRA7PROOG-JQzg56Tc7q_3zIuSAM1FxFKQLuW1YD0Jz1xrjwG3PNmbJA80bz6/pub?start=false&loop=false&delayms=60000&slide=id.g5caf8555ef_0_0" target="_blank">Read case study</a>
-                            <a href="https://medium.com/code-for-canada/from-in-basket-to-inbox-1832e6dbc9e8" target="_blank">View blog post</a>
+                        <div class="overlay" tabindex>
+                            <a tabindex id="focus-link" href="https://docs.google.com/presentation/d/e/2PACX-1vTiUrDdm9kO1ZPVMKTNRA7PROOG-JQzg56Tc7q_3zIuSAM1FxFKQLuW1YD0Jz1xrjwG3PNmbJA80bz6/pub?start=false&loop=false&delayms=60000&slide=id.g5caf8555ef_0_0" target="_blank">Read case study</a>
+                            <a tabindex id="focus-link" href="https://medium.com/code-for-canada/from-in-basket-to-inbox-1832e6dbc9e8" target="_blank">View blog post</a>
                         </div>
                     </div>
 
@@ -202,10 +202,6 @@
                             <p>Branding and website creation for a conceptual outdoor gear company aimed at dogs.
                                 Personal project.</p>
                         </div>
-                        <!-- <div class="overlay">
-                            <a href="#">Read case study</a>
-                            <a href="#">View blog post</a>
-                        </div> -->
                     </div>
                 </div>
 
@@ -214,14 +210,10 @@
 
         <section id="contact">
             <div class="greeting-emoji">
-                <!-- <div class="thought-could-container"> -->
                 <img src="./assets/thought-cloud.svg" alt="">
-                <!-- </div> -->
 
                 <h2>Got a project? Let's chat!</h2>
             </div>
-            <!-- <img src="./assets/thought-cloud.svg" alt="">
-            <h2>Got a project? Let's chat!</h2> -->
             <form action="https://formspree.io/huaajoey@gmail.com" method="POST" autocomplete="off">
                 <fieldset>
                     <div class="personal-input">
@@ -277,7 +269,14 @@
 
     <script>
         $('a').smoothScroll({
+            speed: 1250,
+            // to offset from beginning of where section is
+            offset: -60,
         });
+
+        focusMethod = function getFocus() {
+            document.getElementById("focus-container").focus();
+        }
 
         $(document).ready(function () {
 
@@ -286,6 +285,10 @@
             });
 
             $('.exit-responsive').on('click', function () {
+                $('.menu').toggleClass('show');
+            });
+
+            $('.click-link').on('click', function () {
                 $('.menu').toggleClass('show');
             });
         });

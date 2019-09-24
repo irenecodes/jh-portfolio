@@ -19,8 +19,11 @@ body {
     // background-attachment: fixed;
     @media @tablet {
         background: url(../../assets/background.png) top left no-repeat;
-        background-size: 100% 100%;
+        background-size: cover;
         background-attachment: fixed;
+    }
+    @media @desktop {
+        background-size: 100% 100%;
     }
 }
 
@@ -65,8 +68,12 @@ img {
     margin: 0 auto;
 }
 
-// header styles
 
+
+// header styles
+.nav-bar-bg {
+    background: rgba(255,94,152, 0.2);
+}
 .nav-bar {
     position: fixed;
     top:0;
@@ -94,7 +101,7 @@ img {
 .menu {
     display:none;
     text-align: right;
-    position:absolute;
+    position:fixed;
     top:0;
     bottom:0;
     right:0;
@@ -141,6 +148,7 @@ img {
 }
 
 .exit-responsive {
+    cursor: pointer;
     @media @tablet {
         display: none;
     }
@@ -157,7 +165,7 @@ header {
 
 // intro styles
 .intro {
-    margin-top:20vh;
+    margin-top:10vh;
     h1 {
         font-size: 1.3rem;
         @media @tablet {
@@ -165,7 +173,7 @@ header {
             font-size: 2rem;
         }
         @media @desktop {
-            margin: 20%;
+            margin: 20% 10%;
             font-size: 2.2rem;
         }
     }
@@ -246,6 +254,7 @@ header {
         }
         @media @desktop {
             box-shadow:0px 4px 1px 1px rgba(235,235,235,1);
+            background:white;
         }
     }
     p {
@@ -361,6 +370,7 @@ header {
 
 .overlay {
     background: rgba(0,0,0,0.5);
+    border-radius: 5px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -416,6 +426,9 @@ header {
         &:focus {
             color: white;
             background: @secondary;
+        }
+        @media @desktop {
+            font-size: 2rem;
         }
     }
 }
