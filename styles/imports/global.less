@@ -14,9 +14,6 @@ html {
 
 body {
     font-family: @main-ff;
-    // background: url(../../assets/background.png) top left;
-    // background-size: cover;
-    // background-attachment: fixed;
     @media @tablet {
         background: url(./../assets/background.png) top left no-repeat;
         background-size: cover;
@@ -79,7 +76,6 @@ img {
     top:0;
     left:0;
     right:0;
-    // background: rgba(250,250,250,0.8);
     background: rgba(255,94,152, 0.2);
 
     padding: 10px;
@@ -106,7 +102,6 @@ img {
     bottom:0;
     right:0;
     left:0;
-    // background:@secondary;
     background: rgba(255,94,152, 0.9);
 
 
@@ -157,8 +152,6 @@ img {
 header {
     @media @tablet {
         min-height: 50vh;
-        // background: url(../../assets/background.png);
-        // background-size: cover;background-attachment:fixed;
         position:relative;
     }
 }
@@ -277,7 +270,6 @@ header {
     margin-top: 20%;
     p {
         color: @tertiary;
-        // font-size: 1rem;
     }
     @media @tablet {
         margin-top:0;
@@ -460,7 +452,6 @@ form {
         margin:5px 0;
     }
     .form-button {
-        // width:100%;
         margin:20px 0;
         background: @secondary;
         
@@ -479,4 +470,7 @@ form {
 footer {
     margin-top: 20px;
     text-align: center;
+    @media @tablet {
+        font-size: 1.2rem;
+    }
 }
