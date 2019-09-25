@@ -48,11 +48,11 @@
                 <h1><span>Joey Hua</span> is a <span>UX/UI & Service Designer</span>, who creates vibrant and delightful
                     experiences through data-driven products.</h1>
             </div>
-            <div class="header-img-container">
-                <img class="down-arrow" src="./assets/down-arrow.svg" alt="">
-
-
-            </div>
+            <a href="#about" aria-label="Scroll to about section.">
+                <div class="header-img-container">
+                    <img class="down-arrow" src="./assets/down-arrow.svg" alt="">
+                </div>
+            </a>
         </div>
 
     </header>
@@ -103,24 +103,23 @@
                 <h2>Work I've done <span>(buttons link to Google slides)</span></h2>
 
                 <div class="projects">
-                    <div class="project-container" tabindex=0 id="focus-container" onfocus="focusMethod()">
+                    <div class="project-container" tabindex="0">
                         <h4 class="work-completed">UX research, UX and service design</h4>
                         <div class="work-img-container">
                             <img src="./assets/C4C.png" alt="Code for Canada meeting.">
                         </div>
-
+                    
                         <div class="work-description">
                             <h3>Code for Canada</h3>
-                            <p>Designing a modern way to test applicants for managerial jobs in the federal government.
-                            </p>
+                            <p>Designing a modern way to test applicants for managerial jobs in the federal government</p>
                         </div>
-                        <div class="overlay" tabindex>
-                            <a tabindex id="focus-link" href="https://docs.google.com/presentation/d/e/2PACX-1vTiUrDdm9kO1ZPVMKTNRA7PROOG-JQzg56Tc7q_3zIuSAM1FxFKQLuW1YD0Jz1xrjwG3PNmbJA80bz6/pub?start=false&loop=false&delayms=60000&slide=id.g5caf8555ef_0_0" target="_blank">Read case study</a>
-                            <a tabindex id="focus-link" href="https://medium.com/code-for-canada/from-in-basket-to-inbox-1832e6dbc9e8" target="_blank">View blog post</a>
+                        <div class="overlay">
+                            <a href="https://docs.google.com/presentation/d/e/2PACX-1vTiUrDdm9kO1ZPVMKTNRA7PROOG-JQzg56Tc7q_3zIuSAM1FxFKQLuW1YD0Jz1xrjwG3PNmbJA80bz6/pub?start=false&loop=false&delayms=60000&slide=id.g5caf8555ef_0_0"
+                            target="_blank"
+                                target="_blank">Read case study</a>
+                            <a href="https://medium.com/code-for-canada/from-in-basket-to-inbox-1832e6dbc9e8" target="_blank">View blog post</a>
                         </div>
                     </div>
-
-
                     <div class="project-container" tabindex="0">
                         <h4 class="work-completed">UX & service design, design sprint</h4>
                         <div class="work-img-container">
@@ -135,11 +134,8 @@
                         </div>
                         <div class="overlay">
                             <a href="https://docs.google.com/presentation/d/e/2PACX-1vS26tmvPo_Sza5wvYpywT19am_lusWGZSLhuh5VOb6ua_goz9GBqEDSf2X83VP29qx2H5Czo_vTwSPq/pub?start=false&loop=false&delayms=60000&slide=id.p1" target="_blank">Read case study</a>
-                            
                         </div>
                     </div>
-
-
                     <div class="project-container" tabindex="0">
                         <h4 class="work-completed">UX research, design facilitation, mobile design</h4>
                         <div class="work-img-container">
@@ -153,7 +149,7 @@
                         </div>
                         <div class="overlay">
                             <a href="https://docs.google.com/presentation/d/e/2PACX-1vTjUrFr9jDZuxbbqqDy4d0euhSEr0PnX_IFvHjjF_mltJUcXSt345GWxF8NBOSwcdnI3_StI2n8w1uZ/pub?start=false&loop=false&delayms=60000&slide=id.g4752236c60_0_0" target="_blank">Read case study</a>
-                            <a href=""
+                            <a href="https://www.figma.com/proto/dk4oQvyGyFsljLaKXSBwM9zC/basecount-wireframes?node-id=11%3A103&scaling=scale-down"
                                 target="_blank">View Prototype</a>
                             
                         </div>
@@ -276,21 +272,13 @@
             // to offset from beginning of where section is
             offset: -60,
         });
-
-        focusMethod = function getFocus() {
-            document.getElementById("focus-container").focus();
-        }
-
         $(document).ready(function () {
-
             $('.hamburger').on('click', function () {
                 $('.menu').toggleClass('show');
             });
-
             $('.exit-responsive').on('click', function () {
                 $('.menu').toggleClass('show');
             });
-
             $('.click-link').on('click', function () {
                 $('.menu').toggleClass('show');
             });
