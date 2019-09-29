@@ -1,0 +1,86 @@
+// header styles
+.nav-bar-bg {
+    background: rgba(255,94,152, 0.2);
+}
+.nav-bar {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    background: rgba(255,94,152, 0.2);
+
+    padding: 10px;
+    display:flex;
+    justify-content: space-between;
+
+    .logo-container {
+        display:flex;
+        align-self: center;
+    }
+
+    @media @tablet {
+        justify-content: center;
+        position: initial;
+        background: initial;
+    }
+}
+
+.menu {
+    display:none;
+    text-align: right;
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background: #009fae;
+    @media @tablet {
+        background:none;
+        position:static;
+        display:block;
+    }
+    li {
+        font-size:2rem;
+        padding:10px;
+        @media @tablet {
+            font-size: 1.2rem;
+        }
+    }
+    a{
+        color: white;
+        @media @tablet {
+            color: @primary;
+        }
+    }
+    ul {
+        @media @tablet {
+            display:flex;
+            justify-content: center;
+        }
+    }
+}
+
+.show {
+    display:block;
+}
+
+.hamburger {
+    font-size: 1.5rem;
+    @media @tablet {
+        display:none;
+    }
+}
+
+.exit-responsive {
+    cursor: pointer;
+    @media @tablet {
+        display: none;
+    }
+}
+
+header {
+    @media @tablet {
+        min-height: 50vh;
+        position:relative;
+    }
+}

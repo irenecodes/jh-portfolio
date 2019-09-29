@@ -1,0 +1,112 @@
+// work styles
+#work {
+    margin-top: 20%;
+    p {
+        color: #000;
+    }
+    @media @tablet {
+        margin-top:0;
+        .mobile-version-work-intro {
+            display:none;
+        }
+    }
+    a {
+        margin: 20% 0;
+        padding: 20px;
+        border-radius: 50px;
+        display:block;
+        text-align: center;
+        background: @secondary;
+        color:white;
+        &:nth-child(2) {
+            background: @tertiary;
+        }
+        @media @tablet {
+            margin: 15px;
+        }
+    }
+}
+
+.desktop-version-work {
+    display:none;
+    @media @tablet {
+        display: block;
+        h2 {
+            text-align: center;
+            margin: 50px 0;
+        }
+        span {
+            display:block;
+            color: @tertiary;
+        }
+    }
+}
+
+.projects {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+
+.project-container {
+    &:hover > .overlay,
+    &:focus-within > .overlay,
+    .overlay:hover,
+    .overlay.focus {
+        opacity: 1;
+    }
+}
+
+.project-container {
+    background: white;
+    position:relative;
+    border-radius: 5px;
+    box-shadow:0px 4px 1px 1px rgba(235,235,235,0.2);
+    margin: 2.5%;
+    flex: 0 0 45%;
+    .work-completed {
+        position: absolute;
+        max-width:75%;
+        top:15px;
+        padding:15px;
+        background: rgba(255,255,255,0.85);
+        border-radius: 0 50px 50px 0;
+        font-family: @header-span-ff;
+    }
+
+    img {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .work-description {
+        border-radius: 0 0 5px 5px;
+        padding:20px;
+        background: #fff;
+    }
+
+    h3 {
+        font-family: @header-span-ff;
+    }
+}
+
+.overlay {
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+    opacity: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    a {
+        width:50%;
+        &hover,
+        &:focus {
+            outline: 5px auto -webkit-focus-ring-color;
+        }
+    }
+}

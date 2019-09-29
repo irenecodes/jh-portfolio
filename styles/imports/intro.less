@@ -1,0 +1,53 @@
+// intro styles
+.intro {
+    margin-top:20vh;
+    @media @mid-size {
+    }
+    @media @tablet {
+        margin-top: 0;
+        padding-top: none;
+    }
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 50px;
+        @media @tablet {
+            margin: 50px 10%;
+            font-size: 1.7rem;
+        }
+        @media @desktop {
+            font-size: 3rem;
+        }
+    }
+    span{
+        font-family: @header-span-ff;
+        &:nth-child(1) {
+            color: @secondary;
+        }
+        &:nth-child(2) {
+            color: @tertiary;
+        }
+    }
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+}
+
+.header-img-container {
+    .container();
+    margin:15%;
+    @media @mid-size {
+        margin: 50px 10% 10%;
+
+    }
+    img {
+        width: 30px;
+        @media @mid-size {
+            width: 45px;
+        }
+        @media @XLdesktop {
+            width: 65px;
+        }
+    }
+}

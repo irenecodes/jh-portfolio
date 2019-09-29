@@ -1,0 +1,90 @@
+// contact styles
+#contact {
+    h2 {
+        color: @secondary;
+    }
+    @media @tablet {
+        margin-top: 50px;
+    }
+    @media @desktop {
+        margin: 15%;
+    }
+    fieldset {
+    border:none;
+    margin:0;
+    padding:0;
+    }
+    ul {
+        margin: 50px 0;
+        display:flex;
+        justify-content: space-around;
+        @media @desktop {
+            margin-top: 50px;
+        }
+    }
+    a {
+        color:@secondary;
+        background: white;
+        border-radius: 5px;
+        padding:5px 7.5px;
+        border: 2px solid @secondary;
+        transition: ease 0.3s all;
+        font-size: 1.25rem;
+        &:hover,
+        &:focus {
+            color: white;
+            background: @secondary;
+        }
+        @media @tablet {
+            font-size: 1.5rem;
+        }
+        @media @desktop {
+            font-size: 2rem;
+            padding: 12px 18px;
+        }
+    }
+}
+
+
+
+form {
+    label,
+    input,
+    button {
+        display:block;
+    }
+    
+    input,
+    textarea,
+    .form-button {
+        padding:5px;
+        width:100%;
+        border: 2px @secondary solid;
+        border-radius: 5px;
+        &:focus {
+            border:2px @secondary solid;
+        } 
+    }
+    textarea {
+        resize:none;
+    }
+    label {
+        color: @tertiary;
+        margin: 32px 0 12px 0;
+    }
+    .form-button {
+        margin:20px 0;
+        padding: 12px 0;
+        border-radius: 2000px;
+        background: @secondary;
+        
+        color: white;
+        transition: all 0.3s ease;
+        &:focus,
+        &:hover {
+            background:#a63d63;
+            border: 2px #a63d63 solid;
+            color: #fff;
+        }
+    }
+}
